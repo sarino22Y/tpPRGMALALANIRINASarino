@@ -22,18 +22,6 @@ public class bean2 {
 
     private int nombre;
 
-    @PostConstruct
-    public void init() {
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-        Map<String, String> requestParams = facesContext.getExternalContext().getRequestParameterMap();
-        String nombreString = requestParams.get("nb");
-        if (nombreString != null) {
-            nombre = Integer.parseInt(nombreString);
-        } else {
-            nombre = 0;
-        }
-    }
-
     public int getNombre() {
         return nombre;
     }
